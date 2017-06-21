@@ -6,13 +6,20 @@ filesystem = fs
 path = nil
 component = require("component")
 internet = component.internet
+response = nil
 
 --[[
 Functions
 ]]--
 function checkPage(url)
-	local request, response = internet.request(url)
-	return response
+	local request, state = internet.request(url)
+	if state == "invalid adress" then
+		response = false
+		return response
+	else
+		repsonse = true
+		return response
+	end
 end
 
 function downLoad(url)
@@ -26,7 +33,7 @@ function compile(path, raw)
 end
 
 --[[
-User Interface
+User Interface / constructor
 ]]--
 while true do
 	term.write("Please enter the url of the repository")
