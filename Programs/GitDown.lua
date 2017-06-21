@@ -38,7 +38,8 @@ User Interface / constructor
 ]]--
 while true do
 	term.write("Please enter the url of the repository")
-	url = io.read()
+	--url = io.read()
+	url = "https://api.github.com/repos/Xylem-Gaming/XYOS/contents"
 	if checkPage then
 		body = downLoad(url)
 		compile(path, body)
