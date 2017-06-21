@@ -21,7 +21,8 @@ function checkPage(url)
 		repsonse = true
 		return response
 	end
-  
+end
+	
 function downLoad(url)
 	body = internet.open(url, 80)
 end
