@@ -8,12 +8,6 @@ component = require("component")
 internet = component.internet
 
 --[[
-User Interface
-]]--
-term.write("Please name file. \n:")
-name = io.read()
-
---[[
 Functions
 ]]--
 function checkPage(url)
@@ -21,12 +15,24 @@ function checkPage(url)
 	return response
 end
 
-function downLoad()
-
+function downLoad(url)
+	body = internet.open(url, 80)
 end
 
-function compile(path, name)
+function compile(path, raw)
   local file = io.open(path.."/"..name)
 	local file = fs:write(body)
 	fs:close()
+end
+
+--[[
+User Interface
+]]--
+while true do
+	term.write("Please enter the url of the repository")
+	url = io.read()
+	if checkPage then
+		body = downLoad(url)
+		compile(path, body)
+	end
 end
