@@ -4,6 +4,8 @@ Variables
 
 filesystem = fs
 path = nil
+component = require("component")
+internet = component.internet
 
 --[[
 User Interface
@@ -14,8 +16,9 @@ name = io.read()
 --[[
 Functions
 ]]--
-function checkPage()
-
+function checkPage(url)
+	local request, response = internet.request(url)
+	return response
 end
 
 function downLoad()
