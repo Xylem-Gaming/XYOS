@@ -11,6 +11,7 @@ response = nil
 --[[
 Functions
 ]]--
+
 function checkPage(url)
 	local request, state = internet.request(url)
 	if state == "invalid adress" then
@@ -20,8 +21,7 @@ function checkPage(url)
 		repsonse = true
 		return response
 	end
-end
-
+  
 function downLoad(url)
 	body = internet.open(url, 80)
 end
