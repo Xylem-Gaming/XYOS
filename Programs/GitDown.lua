@@ -4,26 +4,42 @@ Variables
 
 filesystem = fs
 path = nil
-
---[[
-User Interface
-]]--
-term.write("Please name file. \n:")
-name = io.read()
+component = require("component")
+internet = component.internet
+response = nil
 
 --[[
 Functions
 ]]--
-function checkPage()
-	--Hello im Ace and you are 
+
+function checkPage(url)
+	local request, state = internet.request(url)
+	if state == "invalid adress" then
+		response = false
+		return response
+	else
+		repsonse = true
+		return response
+	end
+  
+function downLoad(url)
+	body = internet.open(url, 80)
 end
 
-function downLoad()
-
-end
-
-function compile(path, name)
+function compile(path, raw)
   local file = io.open(path.."/"..name)
 	local file = fs:write(body)
 	fs:close()
+end
+
+--[[
+User Interface / constructor
+]]--
+while true do
+	term.write("Please enter the url of the repository")
+	url = io.read()
+	if checkPage then
+		body = downLoad(url)
+		compile(path, body)
+	end
 end
