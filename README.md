@@ -10,3 +10,6 @@ Update the libraries
 /lib/package.lua
 package.path = "/tmp/Xylem-Gaming/XYOS/API/?.lua;..." This is added to the front of the path
 reboot - this is to invoke the new lib
+
+rm -r /tmp/*
+/home/gitdown Xylem-Gaming/XYOS
