@@ -21,30 +21,31 @@ for i = 0, 1 do
   iconcol[i] = {}
   
 --Homepage
-for j = 0, 4 do
-  iconcol[0][j] = 0x000000
+	for j = 0, 4 do
+	  iconcol[0][j] = 0x000000
 
---iconcol[homepage] = {
---0 = 0x000000
---1 = 0x000000
---2 = 0x000000
---3 = 0x000000
---4 = 0x000000}
+	--iconcol[homepage] = {
+	--0 = 0x000000
+	--1 = 0x000000
+	--2 = 0x000000
+	--3 = 0x000000
+	--4 = 0x000000}
 
---Redstone
-iconcol[1][0] = nil
-iconcol[1][1] = 0x330000
-iconcol[1][2] = 0xFF0000
-iconcol[1][3] = 0x990000
-iconcol[1][4] = 0x660000
+	--Redstone
+	iconcol[1][0] = nil
+	iconcol[1][1] = 0x330000
+	iconcol[1][2] = 0xFF0000
+	iconcol[1][3] = 0x990000
+	iconcol[1][4] = 0x660000
 
---iconcol[redstone] = {
---0 = nil,
---1 = 0x330000,
---2 = 0xFF0000,
---3 = 0x990000,
---4 = 0x660000}
-
+	--iconcol[redstone] = {
+	--0 = nil,
+	--1 = 0x330000,
+	--2 = 0xFF0000,
+	--3 = 0x990000,
+	--4 = 0x660000}
+	end
+end
 icons = {}
 
 for i = 0, 1 do
@@ -76,6 +77,7 @@ icons[redstone] = {
 0,0,1,1,0,0,0,0,1,1,0,0,
 0,0,0,0,1,1,1,1,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0}
+end
 
 local x,y = gpu.getResolution()
  
@@ -116,7 +118,7 @@ function screen.drawBox(bx, by, minx, maxx, miny, maxy, colour, border)
 end
  
 function screen.drawLine(x, y, length, colour)
-  term.setCursorPos(x,y,)
+  term.setCursorPos(x,y)
   gpu.setBackground(colour)
   for i = 1,length do
     term.write(" ")
