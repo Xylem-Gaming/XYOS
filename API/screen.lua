@@ -88,7 +88,7 @@ function screen.clear()
   gpu.fill(1,1,x,y, " ")
 end
  
-function screen.drawBox(local x, local y, minx, maxx, miny, maxy, local colour, border)
+function screen.drawBox(bx, by, minx, maxx, miny, maxy, colour, border)
   if border == true then
     gpu.setBackground(0xCCCCCC)
       for i = minx-1,maxx+1 do
@@ -123,7 +123,7 @@ function screen.drawLine(x, y, length, colour)
   end
 end
  
-function screen.centerText(local y,text)
+function screen.centerText(y ,text)
   newx = (math.floor((x+#text)/2))
   term.write(text)
 end
