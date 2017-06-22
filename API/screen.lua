@@ -17,20 +17,38 @@ VARIABLES
 ]]
  
 iconcol = {}
-iconcol[homepage] = {
-0 = 0x000000
-1 = 0x000000
-2 = 0x000000
-3 = 0x000000
-4 = 0x000000}
-iconcol[redstone] = {
-0 = nil,
-1 = 0x330000,
-2 = 0xFF0000,
-3 = 0x990000,
-4 = 0x660000}
+for i = 0, 1 do
+  iconcol[i] = {}
+  
+--Homepage
+for j = 0, 4 do
+  iconcol[0][j] = 0x000000
+
+--iconcol[homepage] = {
+--0 = 0x000000
+--1 = 0x000000
+--2 = 0x000000
+--3 = 0x000000
+--4 = 0x000000}
+
+--Redstone
+iconcol[1][0] = nil
+iconcol[1][1] = 0x330000
+iconcol[1][2] = 0xFF0000
+iconcol[1][3] = 0x990000
+iconcol[1][4] = 0x660000
+
+--iconcol[redstone] = {
+--0 = nil,
+--1 = 0x330000,
+--2 = 0xFF0000,
+--3 = 0x990000,
+--4 = 0x660000}
 
 icons = {}
+
+for i = 0, 1 do
+  iconcol[i] = {}
 icons[homepage] = {
 0,0,0,0,0,1,1,0,0,0,0,0,
 0,0,0,0,1,3,3,1,0,0,0,0,
