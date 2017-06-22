@@ -38,13 +38,14 @@ iconcol[1][4] = 0x660000
 	--2 = 0xFF0000,
 	--3 = 0x990000,
 	--4 = 0x660000}
-	end
-end
+
 icons = {}
 
 for i = 0, 1 do
   iconcol[i] = {}
-icons[homepage] = {
+end
+--Homepage
+icons[0] = {
 0,0,0,0,0,1,1,0,0,0,0,0,
 0,0,0,0,1,3,3,1,0,0,0,0,
 0,0,0,1,2,3,3,0,1,0,0,0,
@@ -58,7 +59,9 @@ icons[homepage] = {
 0,0,0,0,1,1,1,1,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0
 }
-icons[redstone] = {
+
+--Redstone
+icons[1] = {
 0,0,0,0,0,1,1,0,0,0,0,0,
 0,0,0,0,1,3,3,1,0,0,0,0,
 0,0,0,1,2,3,0,0,1,0,0,0,
@@ -71,7 +74,7 @@ icons[redstone] = {
 0,0,1,1,0,0,0,0,1,1,0,0,
 0,0,0,0,1,1,1,1,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0}
-end
+
 
 local x,y = gpu.getResolution()
  
@@ -84,7 +87,7 @@ function screen.clear()
   gpu.fill(1,1,x,y, " ")
 end
  
-function screen.drawBox(x, y, minx, maxx, miny, maxy, colour, border)
+function screen.drawBox(x, y, minx, maxx, miny, maxy, colour, border) end
 function screen.drawBox(bx, by, minx, maxx, miny, maxy, colour, border)
   if border == true then
     gpu.setBackground(0xCCCCCC)
