@@ -2,6 +2,8 @@
 VARIABLES
 ]]
  
+ local page = {}
+ 
 local pages = {
 homepage = false,
 redstone = false
@@ -51,6 +53,6 @@ function redstonePage()
 end
  
 --Screen to display system properties
-function systemProp()
+function page.systemProp()
  
 end

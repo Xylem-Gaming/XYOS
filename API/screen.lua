@@ -6,8 +6,11 @@ WIP screen api for XYOS
 INITIALISATION
 ]]
  
+ local screen = {}
+ 
 local component = require("component")
 gpu = component.gpu
+term = require("term")
  
 --[[
 VARIABLES
@@ -58,16 +61,16 @@ icons[redstone] = {
 
 local x,y = gpu.getResolution()
  
-function init()
+function screen.init()
  
 end
  
-function clear()
+function screen.clear()
   gpu.setBackground(0xFFFFFF)
   gpu.fill(1,1,x,y, " ")
 end
  
-function drawBox(local x, local y, minx, maxx, miny, maxy, local colour, border)
+function screen.drawBox(local x, local y, minx, maxx, miny, maxy, local colour, border)
   if border == true then
     gpu.setBackground(0xCCCCCC)
       for i = minx-1,maxx+1 do
@@ -94,7 +97,7 @@ function drawBox(local x, local y, minx, maxx, miny, maxy, local colour, border)
   end
 end
  
-function drawLine(x, y, length, colour)
+function screen.drawLine(x, y, length, colour)
   term.setCursorPos(x,y,)
   gpu.setBackground(colour)
   for i = 1,length do
@@ -102,12 +105,12 @@ function drawLine(x, y, length, colour)
   end
 end
  
-function centerText(local y,text)
+function screen.centerText(local y,text)
   newx = (math.floor((x+#text)/2))
   term.write(text)
 end
  
-function drawIcon(icon,x,y)
+function screen.drawIcon(icon,x,y)
   ncol = 12 -- theoretical columns
   nrow = 12 -- theoretical rows
   --actual columns would be 144 with 0 rows
@@ -131,3 +134,5 @@ function drawIcon(icon,x,y)
     end
   end
 end
+
+return screen
