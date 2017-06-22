@@ -19,24 +19,18 @@ VARIABLES
 iconcol = {}
 for i = 0, 1 do
   iconcol[i] = {}
-  
+end
 --Homepage
-	for j = 0, 4 do
-	  iconcol[0][j] = 0x000000
 
-	--iconcol[homepage] = {
-	--0 = 0x000000
-	--1 = 0x000000
-	--2 = 0x000000
-	--3 = 0x000000
-	--4 = 0x000000}
-
-	--Redstone
-	iconcol[1][0] = nil
-	iconcol[1][1] = 0x330000
-	iconcol[1][2] = 0xFF0000
-	iconcol[1][3] = 0x990000
-	iconcol[1][4] = 0x660000
+for j = 0, 4 do
+  iconcol[0][j] = 0x000000
+end
+--Redstone
+iconcol[1][0] = 0
+iconcol[1][1] = 0x330000
+iconcol[1][2] = 0xFF0000
+iconcol[1][3] = 0x990000
+iconcol[1][4] = 0x660000
 
 	--iconcol[redstone] = {
 	--0 = nil,
@@ -90,6 +84,7 @@ function screen.clear()
   gpu.fill(1,1,x,y, " ")
 end
  
+function screen.drawBox(x, y, minx, maxx, miny, maxy, colour, border)
 function screen.drawBox(bx, by, minx, maxx, miny, maxy, colour, border)
   if border == true then
     gpu.setBackground(0xCCCCCC)
@@ -125,7 +120,8 @@ function screen.drawLine(x, y, length, colour)
   end
 end
  
-function screen.centerText(y ,text)
+
+function screen.centerText(y,text)
   newx = (math.floor((x+#text)/2))
   term.write(text)
 end
