@@ -1,4 +1,12 @@
 --Program to construct the OS
+--Init
+fs = require("filesystem")
+screen = require("screen")
+if screen == nil then
+	packages = fs.open("/lib/package.lua",'w')
+	print(packages)
+	packages.close()
+end
 event = require("event")
 
 running = true
