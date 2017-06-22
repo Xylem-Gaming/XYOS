@@ -8,8 +8,8 @@ local pages = {
 homepage = false,
 redstone = false
 }
- 
-gpu = screen.gpu
+component = require("component")
+gpu = component.gpu
 local x,y = gpu.getResolution()
  
 background ={
@@ -19,7 +19,7 @@ sysprop = 0x666666
 }
  
 --Check to see what page is displayed
-function getPage()
+function page.getPage()
   for i = 1,#pages do
     if pages[i] then
       export = {pages[i],background[i]}
@@ -29,12 +29,12 @@ function getPage()
 end
  
 --Sees if page is runnable
-function checkPage()
+function page.checkPage()
   return pagestat
 end
  
 --Startscreen for the os
-function homepage() -- Find out how to label all current objects with their x,y and size
+function page.homepage() -- Find out how to label all current objects with their x,y and size
   if true then
     pages.homepage = true
     pages.redstone = false
@@ -48,7 +48,7 @@ function homepage() -- Find out how to label all current objects with their x,y 
 end
  
 --Redstone logic screen
-function redstonePage()
+function page.redstonePage()
   -- Future page (Redstone logic)
 end
  
@@ -56,3 +56,5 @@ end
 function page.systemProp()
  
 end
+
+return page
