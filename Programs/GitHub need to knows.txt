@@ -1,6 +1,0 @@
-this is the link needed to download the repo
-
-https://api.github.com/repos/Xylem-Gaming/XYOS/contents
-
-to download a file you need to get the 'download_url' url and you will find a RAW version of that file.
-For folders you will find a 'download_url = nill' you need the 'url' to see the components
