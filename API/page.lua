@@ -9,6 +9,7 @@ homepage = false,
 redstone = false
 }
 component = require("component")
+screen = require("screen")
 gpu = component.gpu
 local x,y = gpu.getResolution()
  
@@ -35,11 +36,8 @@ end
  
 --Startscreen for the os
 function page.homepage() -- Find out how to label all current objects with their x,y and size
-  if true then
-    pages.homepage = true
-    pages.redstone = false
-  end
-  screen.clear()
+  pages.homepage = true
+  pages.redstone = false
   screen.drawBox(2,2,x-1,y-1,background.homepage,true)
   screen.centerText(3, "Homepage")
   for i = 0, #screen.icons-1 do
