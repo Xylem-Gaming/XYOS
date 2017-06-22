@@ -2,6 +2,8 @@
 --Init
 fs = require("filesystem")
 screen = require("screen")
+page = require("page")
+
 if screen == nil then
 	packages = fs.open("/lib/package.lua",'w')
 	print(packages)
