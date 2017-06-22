@@ -14,9 +14,9 @@ gpu = component.gpu
 local x,y = gpu.getResolution()
  
 background ={
-homepage = 0x0000FF,
-redstone = 0xFF0000,
-sysprop = 0x666666
+0x0000FF, -- Homepage
+0xFF0000, -- Redditor
+0x666666 -- Sysprop
 }
  
 --Check to see what page is displayed
@@ -38,7 +38,7 @@ end
 function page.homepage() -- Find out how to label all current objects with their x,y and size
   pages.homepage = true
   pages.redstone = false
-  screen.drawBox(2,2,x-1,y-1,background.homepage,true)
+  screen.drawBox(2,2,x-1,y-1,background[0],true)
   screen.centerText(3, "Homepage")
   for i = 0, #screen.icons-1 do
     screen.drawIcon(i,(i*12)+3,5) -- Offset of the x co ordinate plus the with of the icon
