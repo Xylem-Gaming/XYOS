@@ -19,10 +19,11 @@ VARIABLES
 iconcol = {}
 for i = 0, 1 do
   iconcol[i] = {}
-  
+end
 --Homepage
 for j = 0, 4 do
   iconcol[0][j] = 0x000000
+end
 
 --iconcol[homepage] = {
 --0 = 0x000000
@@ -32,7 +33,7 @@ for j = 0, 4 do
 --4 = 0x000000}
 
 --Redstone
-iconcol[1][0] = nil
+iconcol[1][0] = 0
 iconcol[1][1] = 0x330000
 iconcol[1][2] = 0xFF0000
 iconcol[1][3] = 0x990000
