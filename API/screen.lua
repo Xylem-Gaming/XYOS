@@ -87,20 +87,19 @@ function screen.clear()
   gpu.fill(1,1,x,y, " ")
 end
  
-function screen.drawBox(x, y, minx, maxx, miny, maxy, colour, border) end
 function screen.drawBox(bx, by, minx, maxx, miny, maxy, colour, border)
   if border == true then
     gpu.setBackground(0xCCCCCC)
       for i = minx-1,maxx+1 do
         for z = miny-1, miny+1 do
-          term.setCursorPos(i,z)
+          term.setCursor(i,z)
           term.write(" S")
       end
     end
     gpu.setBackground(colour)
     for i = minx,maxx do
       for z = miny+1,maxy+1 do
-        term.setCursorPos(i,z)
+        term.setCursor(i,z)
         term.write(" ")
       end
     end
@@ -108,7 +107,7 @@ function screen.drawBox(bx, by, minx, maxx, miny, maxy, colour, border)
     gpu.setBackground(colour)
     for i = minx,maxx do
       for z = miny,maxy do
-        term.setCursorPos(i,z)
+        term.setCursor(i,z)
         term.write(" ")
       end
     end
@@ -116,7 +115,7 @@ function screen.drawBox(bx, by, minx, maxx, miny, maxy, colour, border)
 end
  
 function screen.drawLine(x, y, length, colour)
-  term.setCursorPos(x,y)
+  term.setCursor(x,y)
   gpu.setBackground(colour)
   for i = 1,length do
     term.write(" ")
@@ -148,7 +147,7 @@ function screen.drawIcon(icon,x,y)
       elseif icon.icons[cvar] == 4 then
         term.setBackground(iconcol[icon][4])
       end
-      term.setCursorPos(row+x,col+y)
+      term.setCursor(row+x,col+y)
       term.write(icons.icon[cvar])
     end
   end
