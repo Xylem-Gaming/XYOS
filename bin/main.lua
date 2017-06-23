@@ -17,7 +17,10 @@ running = true
 screen.init()
 screen.clear()
 while running do
-	event, param1, param2, param3 = event.pull("touch")
 	page.homepage()
+	local id, _, x, y = event.pullMultiple("touch","interrupted")
+	if id = interrupted then
+		running = false
+	end
 	os.sleep(0.1)
 end
