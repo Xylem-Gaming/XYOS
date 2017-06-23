@@ -3,6 +3,7 @@
 fs = require("filesystem")
 screen = require("screen")
 page = require("page")
+event = require("event")
 
 if screen == nil then
 	packages = fs.open("/lib/package.lua",'w')
@@ -18,5 +19,5 @@ screen.clear()
 while running do
 	event, param1, param2, param3 = event.pull("touch")
 	page.homepage()
-	sleep(0.1)
+	os.sleep(0.1)
 end
