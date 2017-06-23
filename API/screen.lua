@@ -87,30 +87,15 @@ function screen.clear()
   gpu.fill(1,1,x,y, " ")
 end
  
-function screen.drawBox(bx, by, minx, maxx, miny, maxy, colour, border)
+function screen.drawBox(bx, by, maxx, maxy, colour, border)
   if border == true then
     gpu.setBackground(0xCCCCCC)
-      for i = minx-1,maxx+1 do
-        for z = miny-1, miny+1 do
-          term.setCursor(i,z)
-          term.write(" ")
-      end
-    end
-    gpu.setBackground(colour)
-    for i = minx,maxx do
-      for z = miny+1,maxy+1 do
-        term.setCursor(i,z)
-        term.write(" ")
-      end
-    end
+    gpu.fill(bx,by,maxx,maxy, " ")
+	gpu.setBackground(colour)
+	gpu.fill(bx+1,by+1,maxx-2,maxy-2, " ")
   else
-    gpu.setBackground(colour)
-    for i = minx,maxx do
-      for z = miny,maxy do
-        term.setCursor(i,z)
-        term.write(" ")
-      end
-    end
+	gpu.setBackground(colour)
+	gpu.fill(bx,by,maxx,maxy," ")
   end
 end
  
