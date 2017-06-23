@@ -93,7 +93,7 @@ function screen.drawBox(bx, by, minx, maxx, miny, maxy, colour, border)
       for i = minx-1,maxx+1 do
         for z = miny-1, miny+1 do
           term.setCursor(i,z)
-          term.write(" S")
+          term.write(" ")
       end
     end
     gpu.setBackground(colour)
