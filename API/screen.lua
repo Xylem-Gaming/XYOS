@@ -110,6 +110,7 @@ end
 
 function screen.centerText(y,text)
   newx = (math.floor((x+#text)/2))
+  term.setCursor(newx,y)
   term.write(text)
 end
  

@@ -38,7 +38,7 @@ end
 function page.homepage() -- Find out how to label all current objects with their x,y and size
   pages.homepage = true
   pages.redstone = false
-  screen.drawBox(2,2,1,x-2,1,y-2,0x0000FF,true)
+  screen.drawBox(1,1,x-2,y-2,0x0000FF,true)
   screen.centerText(3, "Homepage")
   --for i = 0, #screen.icons-1 do
   --  screen.drawIcon(i,(i*12)+3,5) -- Offset of the x co ordinate plus the with of the icon

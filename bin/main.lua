@@ -19,7 +19,7 @@ screen.clear()
 while running do
 	page.homepage()
 	local id, _, x, y = event.pullMultiple("touch","interrupted")
-	if id = interrupted then
+	if id == "interrupted" then
 		running = false
 	end
 	os.sleep(0.1)
